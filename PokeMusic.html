@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <title>PokeMusic</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="skip" href=#main>Skip to Main Content</a>
+      <div class="navigation">
+        <div class="menu">
+          <img src="icons/pokeball.svg" class="nav_icon" id="home_icon" alt="home_icon">
+          <a href = "Home.html">Home</a>
+        </div>
+        <div class="menu">
+          <img src="icons/pikachu.svg" class="nav_icon" id="favs_icon" alt="favs_icon">
+          <a href = "PokeFavs.html">Favs</a>
+        </div>
+        <div class="menu">
+          <img src="icons/music.svg" class="nav_icon" id="music_icon" alt="music_icon">
+          <a href = "PokeMusic.html" class="current">Music</a>
+        </div>
+        <img src="images/pikachu3.png" id="nav_pikachu" alt="pikachu">
+      </div>
+      </nav>
+  <h1>PokeMusic</h1>
+  </header>
+
+<main id="main">
+    <h2>Here are some of my favorite Pokemon game soundtracks!</h2>
+      <div id="floatingPlayer" class="floating-player hidden">
+        <div class="album-art-container">
+            <img src="music_images/floating.jpg" class="album-art" alt="Conductor Pikachu" />
+        </div>
+        <div class="song-info">
+            <span class="song_title">Click a soundtrack to play!</span>
+            <span class="song_source"></span>
+            <span class="song_intro"></span>
+        </div>
+        <audio class="audioPlayer">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="controls-container">
+            <img src="icons/play.svg" class="icon play-icon" alt="play" />
+            <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;" />
+            <div class="progress-bar-container">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span class="total-time">0:00</span>
+            </div>
+        </div>
+    </div>
+    
+
+      <div id="musics">
+
+      <div class="player">
+        <div class="album-art-container">
+            <img src="music_images/music1.jpg" class="album-art" alt="Pokemon FireRed & LeafGreen"/>
+        </div>
+        <div class="song-info">
+            <span class="song_title">Opening Theme</span>
+            <span class="song_source">from Pokemon FireRed & LeafGreen</span>
+            <span class="song_intro">This is the opening theme of Pokemon FireRed & LeafGreen, which is one of the most famous soundtracks</span>
+        </div>
+        <audio id="audioPlayer" src="music/1-Opening Theme.mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="controls-container">
+          <img src="icons/play.svg" class="icon play-icon" alt="play">
+          <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+          <div class="progress-bar-container">
+            <span class="current-time">0:00</span>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <span class="total-time">1:48</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music2.jpg" class="album-art" alt="Pokemon Ruby & Sapphire"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Littleroot Town</span>
+          <span class="song_source">from Pokemon Ruby & Sapphire</span>
+          <span class="song_intro">Peaceful background music of the first town in Pokemon Ruby & Sapphire</span>
+      </div>
+      <audio id="audioPlayer" src="music/2-Littleroot Town.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:28</span>
+      </div>
+    </div>
+  </div>
+
+
+      <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music3.jpg" class="album-art" alt="Steven Stone"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Steven Stone</span>
+          <span class="song_source">from Pokemon Ruby & Sapphire</span>
+          <span class="song_intro">The classic battle music which also plays when battling with steel type specialist Steven Stone</span>
+      </div>
+      <audio id="audioPlayer" src="music/3-Decisive Battle! Daigo.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:51</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music4.jpg" class="album-art" alt="Pokemon Diamond & Pearl"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Twinleaf Town</span>
+          <span class="song_source">from Pokemon Diamond & Pearl</span>
+          <span class="song_intro">Departing from Twinleaf Town, let's start our adventure in Sinnoh region</span>
+      </div>
+      <audio id="audioPlayer" src="music/4-Twinleaf Town.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:21</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music5.jpeg" class="album-art" alt="Lake"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Lake</span>
+          <span class="song_source">from Pokemon Diamond & Pearl</span>
+          <span class="song_intro">The three lakes in the game are protected by three lake guardians, which represents knowledge, emotion, and willpower, respectively</span>
+      </div>
+      <audio id="audioPlayer" src="music/5-Lake.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:13</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music6.jpg" class="album-art" alt="Champion Cynthia"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Champion Cynthia</span>
+          <span class="song_source">from Pokemon Diamond & Pearl</span>
+          <span class="song_intro">I think Cynthia is the coolest champion! The battle music is also impressive and stirring</span>
+      </div>
+      <audio id="audioPlayer" src="music/6-Battle! Champion Shirona.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:31</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music7.jpg" class="album-art" alt="Pokemon HeartGold & SoulSilver"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Ho-Oh</span>
+          <span class="song_source">from Pokemon HeartGold & SoulSilver</span>
+          <span class="song_intro">The battle music with Ho-Oh significantly express the theme of Johto region, with some festival music patterns</span>
+      </div>
+      <audio id="audioPlayer" src="music/7-Battle! (Ho-Oh).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:59</span>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music8.jpg" class="album-art" alt="Route 1"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Route 1</span>
+          <span class="song_source">from Pokemon Black & White</span>
+          <span class="song_intro">The background music of the first route in Pokemon Black & White is one of the most lively soundtracks</span>
+      </div>
+      <audio id="audioPlayer" src="music/8-Route 1.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:21</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music9.png" class="album-art" alt="N"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! N</span>
+          <span class="song_source">from Pokemon Black2 & White2</span>
+          <span class="song_intro">N is one of the coolest bosses in Pokemon games, with great personality and ambitious</span>
+      </div>
+      <audio id="audioPlayer" src="music/9-Battle! (N).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">2:19</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music10.jpg" class="album-art" alt="Lumiose City"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Lumiose City</span>
+          <span class="song_source">from Pokemon X & Y</span>
+          <span class="song_intro">Lumiose City in the Kalos region is the largest city in the Pokemon world. You can wander around the city with this music</span>
+      </div>
+      <audio id="audioPlayer" src="music/10-Lumiose City.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">1:47</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music11.jpg" class="album-art" alt="XerneasYveltal"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Xerneas/Yveltal</span>
+          <span class="song_source">from Pokemon X & Y</span>
+          <span class="song_intro">The legendary battle with Xerneas/Yveltal becomes more exciting with the magnificent music</span>
+      </div>
+      <audio id="audioPlayer" src="music/11-Battle! (XerneasYveltal).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">2:40</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music12.jpg" class="album-art" alt="Lorekeeper Zinnia"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Lorekeeper Zinnia</span>
+          <span class="song_source">from Pokemon Omega Ruby & Alpha Sapphire</span>
+          <span class="song_intro">One of the best battle musics! I'm a fan of Salamence so I really like Zinnia and this soundtrack</span>
+      </div>
+      <audio id="audioPlayer" src="music/12-Battle! (Lorekeeper Zinnia).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">3:04</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music13.png" class="album-art" alt="Lillie"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Lillie's Theme</span>
+          <span class="song_source">from Pokemon Sun & Moon</span>
+          <span class="song_intro">The growth of Lillie is an important theme in Pokemon Sun & Moon, which is perfectly expressed by this soundtrack</span>
+      </div>
+      <audio id="audioPlayer" src="music/13-Lillie's Theme.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">2:01</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music14.jpg" class="album-art" alt="Ultra Necrozma"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Ultra Necrozma</span>
+          <span class="song_source">from Pokemon UltraSun & UltraMoon</span>
+          <span class="song_intro">The battle music of Ultra Necrozma creates a sense of pressure, which promotes the final legendary battle</span>
+      </div>
+      <audio id="audioPlayer" src="music/14-Battle! (Ultra Necrozma).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">3:11</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music15.jpg" class="album-art" alt="Battle! Gym Leader"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Gym Leader</span>
+          <span class="song_source">from Pokemon Sword & Shield</span>
+          <span class="song_intro">Sword & Shield may not satisfy all players as the first Pokemon game on Switch, but the gym battle music is really impressive and corresponds to Dynamax</span>
+      </div>
+      <audio id="audioPlayer" src="music/15-Battle! (Gym Leader).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">6:08</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music16.jpg" class="album-art" alt="Marnie"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Marnie</span>
+          <span class="song_source">from Pokemon Sword & Shield</span>
+          <span class="song_intro">As one of the rival characters in Pokémon Sword and Shield, Marnie owns high popularity and lots of fans, which is expressed in her battle music</span>
+      </div>
+      <audio id="audioPlayer" src="music/16-Battle! (Marnie).mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">2:43</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music17.png" class="album-art" alt="Pokemon Scarlet & Violet"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Area Zero</span>
+          <span class="song_source">from Pokemon Scarlet & Violet</span>
+          <span class="song_intro">The exploration in Aero Zero, which is a mysterious area with ancient and future Pokemons, is accompanied by this great soundtrack</span>
+      </div>
+      <audio id="audioPlayer" src="music/17-Area Zero.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">4:23</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="player">
+      <div class="album-art-container">
+          <img src="music_images/music18.jpg" class="album-art" alt="Ogerpon"/>
+      </div>
+      <div class="song-info">
+          <span class="song_title">Battle! Ogerpon</span>
+          <span class="song_source">from Pokemon Scarlet & Violet</span>
+          <span class="song_intro">The story of Ogerpon is one of the most impressive ones, and the battle music also shows great energy</span>
+      </div>
+      <audio id="audioPlayer" src="music/18-Battle! Ogerpon.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls-container">
+        <img src="icons/play.svg" class="icon play-icon" alt="play">
+        <img src="icons/pause.svg" class="icon pause-icon" alt="pause" style="display: none;">
+        <div class="progress-bar-container">
+          <span class="current-time">0:00</span>
+          <div class="progress-bar">
+              <div class="progress"></div>
+          </div>
+          <span class="total-time">2:40</span>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+
+</main>
+
+<script src="js/script.js"></script>
+<script src="js/music.js"></script>
+</body>
+
+</html>

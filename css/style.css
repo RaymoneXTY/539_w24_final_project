@@ -1,0 +1,904 @@
+:root {
+    --clr-black: #222831;
+    --clr-shallow: #393E46;
+    --clr-yellow: #FFD369;
+    --clr-grey: #EEEEEE;
+    --clr-dark: #345;
+    --clr-black: #123;
+    --clr-normal: #A8A77A;
+	--clr-fire: #EE8130;
+	--clr-water: #6390F0;
+	--clr-electric: #F7D02C;
+	--clr-grass: #7AC74C;
+	--clr-ice: #96D9D6;
+	--clr-fighting: #C22E28;
+	--clr-poison: #A33EA1;
+	--clr-ground: #E2BF65;
+	--clr-flying: #A98FF3;
+	--clr-psychic: #F95587;
+	--clr-bug: #A6B91A;
+	--clr-rock: #B6A136;
+	--clr-ghost: #735797;
+	--clr-dragon: #6F35FC;
+	--clr-dark: #705746;
+	--clr-steel: #B7B7CE;
+	--clr-fairy: #D685AD;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+        -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    }
+
+
+html {background: rgb(248,181,0);
+    background: linear-gradient(180deg, var(--clr-electric) 0, #EEEEEE 600px, rgba(255,255,255,1) 80%);
+    background-repeat: no-repeat;}
+/* style the navigation bar */
+
+.skip {position: absolute;
+    left: -999em;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;}
+.skip:focus {position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    background-color: var(--clr-shallow);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;}
+.navigation {display: grid;
+    grid-template-columns: repeat(4, 1fr);
+margin: auto;
+padding: 2% 1% 2% 1%;
+align-content: center;
+align-items: center;
+justify-content: center;
+justify-items: center;}
+.menu {display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-top: 0;
+    margin-bottom: 0;}
+.navigation a {color: #FFD369;
+    text-decoration: none;
+    font-size: 100%;
+    background-color: #222831;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+    padding: 0.1em 0.5em;
+    text-align: center;}
+.nav_icon {display: inline-block;
+    width: 50%;
+    margin-bottom: 0.5em;
+    color: var(--clr-yellow);}
+
+.nav_icon {
+    transition: transform 0.3s ease; /* Smooth transformation effect */
+  }
+
+.nav_icon:hover {
+    cursor: pointer; /* Change the cursor to a pointer */
+    transform: scale(1.1); /* Enlarge the icon */
+  }
+.nav_icon:hover + a {background-color: var(--clr-grey);
+    color: var(--clr-black);
+    cursor: pointer;}
+.menu:hover .nav_icon {transform: scale(1.2);
+    transition: transform 0.3s ease;}
+
+nav a:hover {background-color: var(--clr-grey);
+    color: var(--clr-black);
+    cursor: pointer;}
+nav a:focus {background-color: var(--clr-grey);
+    color: var(--clr-black);}
+a.current {background-color: var(--clr-grey);
+    color: var(--clr-black);
+    font-weight: bold;}
+#nav_pikachu {width: 100%;}
+
+
+
+
+@media (min-width: 768px) {
+.navigation {
+    padding: 1% 2% 0 2%;
+}
+.navigation a {font-size: 180%;
+    border-radius: 10px;}
+    }
+
+@media (min-width: 1024px) {
+nav{padding-bottom: 2%;}
+.navigation {
+    width: 100%;
+}
+.navigation a {font-size: 300%;
+    border-radius: 15px;}
+#nav_pikachu {width: 80%;}
+}
+/* style the navigation bar */
+
+
+/* style the whole body color and fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+}
+h1 {color: #222831;
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5em;
+    text-shadow: 0.05em 0.1em 0.1em var(--clr-yellow);
+    margin-top: 5%;}
+
+h2 {
+      color: #222831;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 0.2em 0.8em;
+      margin-bottom: 0.4em;
+    }
+
+
+#pokemon_cards {
+    display: flex;
+    flex-direction: column; /* Ensures that the items are laid out in a row */
+    overflow-x: auto; /* Enables horizontal scrolling if the content overflows */
+    align-items: center; /* Align items to the start of the cross axis */
+    white-space: nowrap; /* Prevents wrapping of the items */
+    padding-bottom: 2% 0; /* Gives some space for the scrollbar */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevents the cards from stretching and sets the basis to auto */
+    text-align: center;
+    width: 70%; /* Adjust the width as necessary */
+    margin: 5%;
+    border-radius: 10px;
+    /* Rest of the styles */
+}
+
+#click_pokemon {font-size: 100%;
+    font-weight: bold;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+color: #222831;}
+
+#pikachu {
+        background: radial-gradient(circle at center bottom, var(--clr-electric) 50%, transparent 50%), white;
+    }
+#sceptile {
+        background: radial-gradient(circle at center bottom, var(--clr-grass) 50%, transparent 50%), white;
+    }
+#infernape {
+        background: radial-gradient(circle at center bottom, var(--clr-fire) 50%, transparent 50%), white;
+    }
+#greninja {
+        background: radial-gradient(circle at center bottom, var(--clr-water) 50%, transparent 50%), white;
+    }
+#snorlax {
+        background: radial-gradient(circle at center bottom, var(--clr-normal) 50%, transparent 50%), white;
+    }
+#staraptor {
+        background: radial-gradient(circle at center bottom, var(--clr-flying) 50%, transparent 50%), white;
+    }
+#lycanroc {
+        background: radial-gradient(circle at center bottom, var(--clr-rock) 50%, transparent 50%), white;
+    }
+#gliscor {
+        background: radial-gradient(circle at center bottom, var(--clr-ground) 50%, transparent 50%), white;
+    }
+#gengar {
+        background: radial-gradient(circle at center bottom, var(--clr-ghost) 50%, transparent 50%), white;
+    }
+#toxtricity {
+        background: radial-gradient(circle at center bottom, var(--clr-poison) 50%, transparent 50%), white;
+    }
+#heracross {
+        background: radial-gradient(circle at center bottom, var(--clr-bug) 50%, transparent 50%), white;
+    }
+#lucario {
+        background: radial-gradient(circle at center bottom, var(--clr-fighting) 50%, transparent 50%), white;
+    }
+#weavile {
+        background: radial-gradient(circle at center bottom, var(--clr-ice) 50%, transparent 50%), white;
+    }
+#jirachi {
+        background: radial-gradient(circle at center bottom, var(--clr-steel) 50%, transparent 50%), white;
+    }
+#zoroark {
+        background: radial-gradient(circle at center bottom, var(--clr-dark) 50%, transparent 50%), white;
+    }
+#salamence {
+        background: radial-gradient(circle at center bottom, var(--clr-dragon) 50%, transparent 50%), white;
+    }
+#gardevoir {
+        background: radial-gradient(circle at center bottom, var(--clr-psychic) 50%, transparent 50%), white;
+    }
+#mimikyu {
+        background: radial-gradient(circle at center bottom, var(--clr-fairy) 50%, transparent 50%), white;
+    }
+
+
+.pk_title {display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 0 0 2% 2%;
+    z-index: 1;
+  }
+
+
+#pikachu {box-shadow: 0.2em 0.3em rgba(254,211,48,0.6);}
+#sceptile {box-shadow: 0.2em 0.3em rgba(122,199,76,0.6);}
+#infernape {box-shadow: 0.2em 0.3em rgba(238,129,48,0.6);}
+#greninja {box-shadow: 0.2em 0.3em rgba(99,144,240,0.6);}
+#snorlax {box-shadow: 0.2em 0.3em rgba(168,167,122,0.6);}
+#staraptor {box-shadow: 0.2em 0.3em rgba(169,143,243,0.6);}
+#lycanroc {box-shadow: 0.2em 0.3em rgba(182,161,54,0.6);}
+#gliscor {box-shadow: 0.2em 0.3em rgba(226,191,101,0.6);}
+#gengar {box-shadow: 0.2em 0.3em rgba(115,87,151,0.6);}
+#toxtricity {box-shadow: 0.2em 0.3em rgba(163,62,161,0.6);}
+#heracross {box-shadow: 0.2em 0.3em rgba(166,185,26,0.6);}
+#lucario {box-shadow: 0.2em 0.3em rgba(194,46,40,0.6);}
+#weavile {box-shadow: 0.2em 0.3em rgba(150,217,214,0.6);}
+#jirachi {box-shadow: 0.2em 0.3em rgba(183,183,206,0.6);}
+#zoroark {box-shadow: 0.2em 0.3em rgba(112,87,70,0.6);}
+#salamence {box-shadow: 0.2em 0.3em rgba(111,53,252,0.6);}
+#gardevoir {box-shadow: 0.2em 0.3em rgba(249,85,135,0.6);}
+#mimikyu {box-shadow: 0.2em 0.3em rgba(214,133,173,0.6);}
+
+
+#pikachu {border: 0.1em solid var(--clr-electric);}
+#sceptile {border: 0.1em solid var(--clr-grass);}
+#infernape {border: 0.1em solid var(--clr-fire);}
+#greninja {border: 0.1em solid var(--clr-water);}
+#snorlax {border: 0.1em solid var(--clr-normal);}
+#staraptor {border: 0.1em solid var(--clr-flying);}
+#lycanroc {border: 0.1em solid var(--clr-rock);}
+#gliscor {border: 0.1em solid var(--clr-ground);}
+#gengar {border: 0.1em solid var(--clr-ghost);}
+#toxtricity {border: 0.1em solid var(--clr-poison);}
+#heracross {border: 0.1em solid var(--clr-bug);}
+#lucario {border: 0.1em solid var(--clr-fighting);}
+#weavile {border: 0.1em solid var(--clr-ice);}
+#jirachi {border: 0.1em solid var(--clr-steel);}
+#zoroark {border: 0.1em solid var(--clr-dark);}
+#salamence {border: 0.1em solid var(--clr-dragon);}
+#gardevoir {border: 0.1em solid var(--clr-psychic);}
+#mimikyu {border: 0.1em solid var(--clr-fairy);}
+
+
+#pikachu:hover {border: 0.25em solid var(--clr-electric);}
+#sceptile:hover {border: 0.25em solid var(--clr-grass);}
+#infernape:hover {border: 0.25em solid var(--clr-fire);}
+#greninja:hover {border: 0.25em solid var(--clr-water);}
+#snorlax:hover {border: 0.25em solid var(--clr-normal);}
+#staraptor:hover {border: 0.25em solid var(--clr-flying);}
+#lycanroc:hover {border: 0.25em solid var(--clr-rock);}
+#gliscor:hover {border: 0.25em solid var(--clr-ground);}
+#gengar:hover {border: 0.25em solid var(--clr-ghost);}
+#toxtricity:hover {border: 0.25em solid var(--clr-poison);}
+#heracross:hover {border: 0.25em solid var(--clr-bug);}
+#lucario:hover {border: 0.25em solid var(--clr-fighting);}
+#weavile:hover {border: 0.25em solid var(--clr-ice);}
+#jirachi:hover {border: 0.25em solid var(--clr-steel);}
+#zoroark:hover {border: 0.25em solid var(--clr-dark);}
+#salamence:hover {border: 0.25em solid var(--clr-dragon);}
+#gardevoir:hover {border: 0.25em solid var(--clr-psychic);}
+#mimikyu:hover {border: 0.25em solid var(--clr-fairy);}
+
+
+
+#pikachu:hover, #sceptile:hover, #infernape:hover, #greninja:hover, #snorlax:hover, #staraptor:hover, #lycanroc:hover, #gliscor:hover, #gengar:hover, #toxtricity:hover, #heracross:hover, #lucario:hover, #weavile:hover, #jirachi:hover, #zoroark:hover, #salamence:hover, #gardevoir:hover, #mimikyu:hover{
+    cursor: pointer;
+}
+.card:hover {transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;}
+
+
+.card_type_icon {width: 20%;
+border-radius: 100%;
+margin-right:2%; }
+
+img {display:inline-block;
+      z-index: 100;
+      width: 100%;
+      padding: 2%;
+}
+
+h3 {
+    color: white;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+    padding:2% 0 0 0;
+    text-shadow: 0.05em 0.05em var(--clr-grey);
+      }
+
+h4 {
+      color: white;
+      text-shadow: 0.05em 0.05em #222831;
+      font-size: 200%;
+      padding-bottom: 2%;
+      font-weight: bold;
+      text-align: center;
+    }
+
+
+#type_electric {color: var(--clr-electric);}
+#type_water {color: var(--clr-water);}
+#type_fire {color: var(--clr-fire);}
+#type_grass {color: var(--clr-grass);}
+#type_ice {color: var(--clr-ice);}
+#type_fighting {color: var(--clr-fighting);}
+#type_poison {color: var(--clr-poison);}
+#type_ground {color: var(--clr-ground);}
+#type_flying {color: var(--clr-flying);}
+#type_psychic {color: var(--clr-psychic);}
+#type_bug {color: var(--clr-bug);}
+#type_rock {color: var(--clr-rock);}
+#type_ghost {color: var(--clr-ghost);}
+#type_dragon {color: var(--clr-dragon);}
+#type_dark {color: var(--clr-dark);}
+#type_steel {color: var(--clr-steel);}
+#type_fairy {color: var(--clr-fairy);}
+#type_normal {color: var(--clr-normal);}
+
+
+
+
+/* style pokemon cards in tablet view */
+@media (min-width: 768px) {
+    #pokemon_cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        }
+    .card {
+        margin:2%;
+        width: 25%;
+        }
+    h2 {margin-bottom: 5%;}
+    h3 {font-size: 200%;}
+    h4 {font-size: 150%;}
+    }
+
+/* style pokemon cards in laptop view */
+@media (min-width: 1024px) {
+    h1 {font-size: 5em;
+    margin-top: 0.5em;}
+    h2 {font-size: 2em;}
+    .card {
+        margin:2%;
+        padding-top: 1%;
+        width: 20%;
+        }
+    .card h4 {font-size: 200%;
+    padding-bottom: 0.5em;}
+    #gardevoir .pk_title {flex-direction: column-reverse;
+        grid-row: 1/3;}
+    .pk_title .psychic_icon {width: 60%;
+        padding: 5% auto;
+    margin-top: 15%;}
+    #gardevoir {display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        justify-items: stretch;
+        align-items: start;
+        width: 44%;
+        background: radial-gradient(circle at left center, var(--clr-psychic) 50%, transparent 50%), white;}
+    #gardevoir h3 {font-size: 200%;
+    padding: 0;}
+    #gardevoir h4 {grid-row: 1/2;
+        grid-column: 1/2;
+        font-size: 200%;
+        padding:0;}
+    img[alt="Gardevoir"] {width: 90%;
+        margin: 0 auto;
+        padding: 0;
+    grid-column: 1/2;}
+
+    #mimikyu .pk_title {flex-direction: column-reverse;
+        grid-row: 1/3;}
+    .pk_title .fairy_icon {width: 60%;
+        padding: 5% auto;
+    margin-top: 15%;}
+    #mimikyu {display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        justify-items: stretch;
+        align-items: start;
+        width: 44%;
+        background: radial-gradient(circle at right center, var(--clr-fairy) 50%, transparent 50%), white;}
+    #mimikyu h3 {font-size: 200%;
+    padding: 0;
+    grid-column: 2/-1;}
+    #mimikyu h4 {grid-row: 1/2;
+        grid-column: 2/-1;
+        font-size: 200%;
+        padding: 0;}
+    img[alt="Mimikyu"] {width: 90%;
+        margin: 0 auto;
+        padding: 0;
+    grid-column: 2/-1;}
+    }
+
+/* style the type icons */
+#type_icons {display: none;
+}
+
+@media (min-width: 768px) {
+#type_icons {display: flex;
+flex-wrap: wrap;
+grid-template-columns: repeat(9, 1fr);
+justify-content: center;
+align-content: center;
+align-items: center;
+gap: 2%;
+row-gap: 20px;
+padding: 0 2% 5% 2%;
+}}
+
+.type_icon {width: 9%;
+border-radius: 100%;}
+
+.bug_icon {
+background: #92BC2C;
+box-shadow: 0 0 6px #92BC2C;
+}
+
+.dark_icon {
+background: #595761;
+box-shadow: 0 0 6px #595761;
+}
+
+.dragon_icon {
+background: #0C69C8;
+box-shadow: 0 0 6px #0C69C8;
+}
+
+.electric_icon {
+background: #F2D94E;
+box-shadow: 0 0 6px #F2D94E;
+}
+
+.fire_icon {
+background: #FBA54C;
+box-shadow: 0 0 6px #FBA54C;
+}
+
+.fairy_icon {
+background: #EE90E6;
+box-shadow: 0 0 6px #EE90E6;
+}
+
+.fighting_icon {
+background: #D3425F;
+box-shadow: 0 0 6px #D3425F;
+}
+
+.flying_icon {
+background: #A1BBEC;
+box-shadow: 0 0 6px #A1BBEC;
+}
+
+.ghost_icon {
+background: #5F6DBC;
+box-shadow: 0 0 6px #5F6DBC;
+}
+
+.grass_icon {
+background: #5FBD58;
+box-shadow: 0 0 6px #5FBD58;
+}
+
+.ground_icon {
+background: #DA7C4D;
+box-shadow: 0 0 6px #DA7C4D;
+}
+
+.ice_icon {
+background: #75D0C1;
+box-shadow: 0 0 6px #75D0C1;
+}
+
+.normal_icon {
+background: #A0A29F;
+box-shadow: 0 0 6px #A0A29F;
+}
+
+.poison_icon {
+background: #B763CF;
+box-shadow: 0 0 6px #B763CF;
+}
+
+.psychic_icon {
+background: #FA8581;
+box-shadow: 0 0 6px #FA8581;
+}
+
+.rock_icon {
+background: #C9BB8A;
+box-shadow: 0 0 6px #C9BB8A;
+}
+
+.steel_icon {
+background: #5695A3;
+box-shadow: 0 0 6px #5695A3;
+}
+
+.water_icon {
+background: #539DDF;
+box-shadow: 0 0 6px #539DDF;
+}
+
+.type_icon:hover{
+filter: saturate(200%);
+transform: scale(1.1);
+cursor: pointer;
+}
+
+.card_type_icon {padding: 4%;}
+
+
+
+/* style the music page */
+
+#musics {display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    row-gap: 2em;
+    }
+.player {
+    background-color: var(--clr-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    width: 80%;
+    border: 0.3em solid black;
+    box-shadow: 0.2em 0.3em rgba(0,0,0,0.6);
+}
+
+
+.album-art-container {
+    margin: 0;
+}
+.controls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 2%;
+    margin: 0;
+    width: 100%;
+}
+.album-art {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+}
+
+.song_title {
+    font-size: 120%;
+    font-weight: bold;
+}
+.song_source {
+    font-size: 60%;
+    font-weight: bold;
+    padding: 0;
+}
+
+.song_intro {
+    height: 40px;
+    text-align: center;
+    text-justify: center;
+    font-size: 60%;
+    padding: 2% 2% 0 2%;
+}
+
+.progress-bar-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    color: #222831;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    margin: 0 10px;
+    height: 4px;
+    background-color: #222831;
+    position: relative;
+    
+}
+
+.progress {
+    width: 0%; /* This will be updated with JavaScript */
+    height: 100%;
+    background-color: var(--clr-yellow);
+    position: absolute;
+}
+
+.progress:hover, .progress-bar:hover {
+    cursor: pointer;
+} 
+
+.controls-container .icon {
+    width: 20%;  /* Adjust the width as needed */
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.controls-container .icon:hover {
+    opacity: 0.7;
+}
+.floating-player {
+    display: none;
+    margin: auto;
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Smoother transition */
+}
+
+
+
+@media (min-width: 768px) {
+    .player {
+        width: 40%;
+        margin: 2%;;
+    }
+    .song_intro {height: 50px;
+        font-size: 70%;}
+}
+
+@media (min-width: 1024px) {
+    #musics {
+        max-width: 100%;
+        display:inline-block;
+        overflow: auto;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5%;
+        }
+    .player {display: inline-block;
+        vertical-align: top;
+    width: 22em;}
+    .player .song_intro{visibility: hidden;}
+    .player .controls-container {
+        display: none;}
+    .player .song_title {font-size: 150%;
+        margin: 5% 2% 2% 0;}
+    .player .song_source {font-size: 80%;}
+
+    .album-art-container {width: 100%;
+    text-align: center;}
+    .album-art {width: 100%;}
+
+#musics .album-art-container :hover {
+    cursor: pointer;
+    border: 0.3em solid black;
+}
+
+.floating-player {display: grid;
+    visibility: visible;
+    opacity: 1;}
+}
+
+.floating-player.visible {
+    visibility: visible;
+    opacity: 1;
+    display: grid;
+}
+
+.floating-player .song_title {
+    font-size: 250%;
+    font-weight: bold;
+    text-align: center;
+}
+.floating-player .song_source {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+.floating-player .song_intro {
+    font-size: 120%;
+    text-align: center;
+    padding: 2% 2% 0 2%;
+    margin-bottom: 20%;
+}
+
+.floating-player .controls-container {
+    grid-column: 1/-1;
+    width: 60%;
+    margin: auto;
+    padding: 0;
+}
+
+.floating-player .album-art {
+    width: 200%;
+    height:auto;
+    max-height: 100%;
+    margin: 0;
+    grid-row: 1/-1;
+    border: 0.4em solid var(--clr-black);
+}
+.floating-player .progress-bar {height: 0.6em;}
+
+
+
+
+
+/* style the home page */
+
+#home main {display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+    align-items: center;}
+#home h1 {
+    font-size: 2em;
+    }
+#intro_card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 5% auto;}
+#intro_image  {
+    text-align: center;}
+#intro_image img {
+    width: 60%;
+    padding: 0;
+    border-radius: 10%;
+    box-shadow: 0.4em 0.4em var(--clr-water);}
+#intro_text {margin-top: 5%;
+    width: 100%;
+    padding: 0 5% 0 5%;
+    text-align: center;}
+
+
+#pokemon_game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 5% auto;
+    padding-bottom: 5%;
+    border: 0.2em solid #222831;
+    box-shadow: 0.2em 0.2em #222831;}
+    /* background-color: #EEEEEE;
+    border: 0.2em solid black;
+box-shadow: 0.2em 0.2em black;} */
+
+#pokemon_game h2 {font-size: 200%;
+    color: #222831;
+    text-shadow: 0.02em 0.05em var(--clr-fire);
+    padding: 2% 2%;
+    text-align: center;}
+
+#firered {width: 100%;
+    padding: 0;}
+
+#pokemon_game p {font-size: 100%;
+    padding: 2% 5%;
+    text-align: center;}
+
+#consoles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 5% 5%;
+    }
+
+#pokemon_anime {
+    grid-column: 1/span2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 5% auto;
+    margin-top: 5%;
+    border: 4px solid #222831;
+    box-shadow: 2px 4px 1px #222831;}
+
+#pokemon_anime h2 {font-size: 200%;
+    color: #222831;
+    text-shadow: 0.02em 0.05em #6ec4f5;
+    padding: 2%;
+    text-align: center;}
+
+#pokemon_anime p {font-size: 100%;
+    padding: 5%;
+    text-align: center;
+    color: #222831;}
+#ash {width: 100%;
+    padding: 0;}
+
+#ash_all {width: 100%;
+    padding: 0;}
+
+@media (min-width: 1024px) {
+    #home main {grid-template-columns: repeat(2, 1fr);
+        align-items: start;;
+    padding: 0 5% 0 5%;}
+    #intro_card {width: 60%;}
+    #pokemon_game {display: grid;
+        border: none;
+        box-shadow: none;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+    padding-bottom: 0;
+    width: 100%;}
+    #pokemon_game p {grid-column: 2/-1;
+    font-size: 100%;}
+    #pokemon_anime {display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: start;
+        justify-content: center;
+        align-content: center;
+        padding-bottom: 0;}
+    #anime_intro {grid-column: 1/2;
+    grid-row: 2/3;}
+    #pokemon_anime img:first-child {grid-column: 1/2;
+        grid-row: 1/2;}
+    #pokemon_anime img:last-child {grid-column: 2/-1;
+        grid-row: 1/span2;}
+}
