@@ -5,23 +5,24 @@
     --clr-grey: #EEEEEE;
     --clr-dark: #345;
     --clr-black: #123;
-    --clr-normal: #A8A77A;
+    --clr-normal: #A0A29F;
 	--clr-fire: #EE8130;
 	--clr-water: #6390F0;
 	--clr-electric: #F7D02C;
 	--clr-grass: #7AC74C;
 	--clr-ice: #96D9D6;
 	--clr-fighting: #C22E28;
-	--clr-poison: #A33EA1;
-	--clr-ground: #E2BF65;
-	--clr-flying: #A98FF3;
+	--clr-poison: #B763CF;
+	--clr-ground: #DA7C4D;
+	--clr-flying: #A1BBEC;
 	--clr-psychic: #F95587;
 	--clr-bug: #A6B91A;
-	--clr-rock: #B6A136;
-	--clr-ghost: #735797;
-	--clr-dragon: #6F35FC;
+	--clr-rock: #C9BB8A;
+	--clr-ghost: #5F6DBC;
+	--clr-dragon: #0C69C8;
 	--clr-dark: #705746;
-	--clr-steel: #B7B7CE;
+    --clr-steel: #5695A3;
+	/* --clr-steel: #B7B7CE; */
 	--clr-fairy: #D685AD;
 }
 /* Remove all animations and transitions for people that prefer not to see them */
@@ -44,97 +45,78 @@ html {background: rgb(248,181,0);
     background: linear-gradient(180deg, var(--clr-electric) 0, #EEEEEE 600px, rgba(255,255,255,1) 80%);
     background-repeat: no-repeat;}
 /* style the navigation bar */
-
 .skip {position: absolute;
     left: -999em;
     top: auto;
-    width: 1px;
-    height: 1px;
     overflow: hidden;}
 .skip:focus {position: relative;
-    left: auto;
-    top: auto;
-    width: auto;
-    height: auto;
-    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
     background-color: var(--clr-shallow);
     color: white;
     text-align: center;
     padding: 10px;
     border-radius: 5px;}
 .navigation {display: grid;
-    grid-template-columns: repeat(4, 1fr);
-margin: auto;
-padding: 2% 1% 2% 1%;
-align-content: center;
-align-items: center;
-justify-content: center;
-justify-items: center;}
-.menu {display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(3, 25%);
+    gap: 2%;
+    margin: auto;
+    padding: 3% 1% 2% 1%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;}
+
+a {display: flex;
+    flex-direction: row;
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding-top: 0;
-    margin-bottom: 0;}
-.navigation a {color: #FFD369;
-    text-decoration: none;
-    font-size: 100%;
+    width: 100%;}
+a span {
     background-color: #222831;
+    color: var(--clr-electric);
     border-radius: 5px;
-    transition: background-color 0.5s;
-    padding: 0.1em 0.5em;
-    text-align: center;}
-.nav_icon {display: inline-block;
-    width: 50%;
-    margin-bottom: 0.5em;
-    color: var(--clr-yellow);}
+    padding: 0.1em 0.2em;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;}
 
-.nav_icon {
-    transition: transform 0.3s ease; /* Smooth transformation effect */
-  }
+a img {width: 50%;
+text-align: center;}
+.navigation a:link {color: #FFD369;
+    text-decoration: none;
+    transition: transform 0.3s ease; }
 
-.nav_icon:hover {
-    cursor: pointer; /* Change the cursor to a pointer */
-    transform: scale(1.1); /* Enlarge the icon */
-  }
-.nav_icon:hover + a {background-color: var(--clr-grey);
-    color: var(--clr-black);
-    cursor: pointer;}
-.menu:hover .nav_icon {transform: scale(1.2);
-    transition: transform 0.3s ease;}
-
-nav a:hover {background-color: var(--clr-grey);
-    color: var(--clr-black);
-    cursor: pointer;}
-nav a:focus {background-color: var(--clr-grey);
-    color: var(--clr-black);}
-a.current {background-color: var(--clr-grey);
-    color: var(--clr-black);
-    font-weight: bold;}
-#nav_pikachu {width: 100%;}
-
-
-
-
-@media (min-width: 768px) {
-.navigation {
-    padding: 1% 2% 0 2%;
+.navigation a:hover img.nav_icon {
+    transform: scale(1.2); /* Scale up the image by 1.1 */
 }
-.navigation a {font-size: 180%;
-    border-radius: 10px;}
+
+.navigation a:hover span {
+    background-color: white; /* Change background of span to white */
+    color: #222831; /* Change text color of span to black */
+}
+.navigation .current img {
+    transform: scale(1.2); /* Scale up the image by 1.1 */
+}
+.navigation .current span {
+    background-color: white; /* Change background of span to white */
+    color: #222831; /* Change text color of span to black */
+    font-weight: bold;
+}
+@media (min-width: 768px) {
+    .navigation {grid-template-columns: repeat(3, 15%);
+    }
+    a {font-size: 120%;}
+    a img {width: 40%;}
     }
 
 @media (min-width: 1024px) {
-nav{padding-bottom: 2%;}
-.navigation {
-    width: 100%;
-}
-.navigation a {font-size: 300%;
-    border-radius: 15px;}
-#nav_pikachu {width: 80%;}
-}
-/* style the navigation bar */
+    a span{font-size: 180%;
+    border-radius: 10px;}
+    a img {width: 30%;}
+    }
+
 
 
 /* style the whole body color and fonts */
@@ -146,9 +128,10 @@ h1 {color: #222831;
     font-size: 4em;
     font-weight: bold;
     text-align: center;
+    padding-top: 0.5em;
     margin-bottom: 0.5em;
     text-shadow: 0.05em 0.1em 0.1em var(--clr-yellow);
-    margin-top: 5%;}
+    margin-top: 2%;}
 
 h2 {
       color: #222831;
@@ -254,18 +237,18 @@ color: #222831;}
 #sceptile {box-shadow: 0.2em 0.3em rgba(122,199,76,0.6);}
 #infernape {box-shadow: 0.2em 0.3em rgba(238,129,48,0.6);}
 #greninja {box-shadow: 0.2em 0.3em rgba(99,144,240,0.6);}
-#snorlax {box-shadow: 0.2em 0.3em rgba(168,167,122,0.6);}
-#staraptor {box-shadow: 0.2em 0.3em rgba(169,143,243,0.6);}
-#lycanroc {box-shadow: 0.2em 0.3em rgba(182,161,54,0.6);}
-#gliscor {box-shadow: 0.2em 0.3em rgba(226,191,101,0.6);}
-#gengar {box-shadow: 0.2em 0.3em rgba(115,87,151,0.6);}
-#toxtricity {box-shadow: 0.2em 0.3em rgba(163,62,161,0.6);}
+#snorlax {box-shadow: 0.2em 0.3em rgba(160,162,159,0.6);}
+#staraptor {box-shadow: 0.2em 0.3em rgba(161,187,236,0.6);}
+#lycanroc {box-shadow: 0.2em 0.3em rgba(201,187,138,0.6);}
+#gliscor {box-shadow: 0.2em 0.3em rgba(218,124,77,0.6);}
+#gengar {box-shadow: 0.2em 0.3em rgba(95,109,188,0.6);}
+#toxtricity {box-shadow: 0.2em 0.3em rgba(183,99,207,0.6);}
 #heracross {box-shadow: 0.2em 0.3em rgba(166,185,26,0.6);}
 #lucario {box-shadow: 0.2em 0.3em rgba(194,46,40,0.6);}
 #weavile {box-shadow: 0.2em 0.3em rgba(150,217,214,0.6);}
-#jirachi {box-shadow: 0.2em 0.3em rgba(183,183,206,0.6);}
+#jirachi {box-shadow: 0.2em 0.3em rgba(86,149,163,0.6);}
 #zoroark {box-shadow: 0.2em 0.3em rgba(112,87,70,0.6);}
-#salamence {box-shadow: 0.2em 0.3em rgba(111,53,252,0.6);}
+#salamence {box-shadow: 0.2em 0.3em rgba(12,105,200,0.6);}
 #gardevoir {box-shadow: 0.2em 0.3em rgba(249,85,135,0.6);}
 #mimikyu {box-shadow: 0.2em 0.3em rgba(214,133,173,0.6);}
 
@@ -802,7 +785,7 @@ cursor: pointer;
     padding: 0;
     border-radius: 10%;
     box-shadow: 0.4em 0.4em var(--clr-water);}
-#intro_text {margin-top: 5%;
+#intro_text {margin-top: 2%;
     font-size: 120%;
     font-weight: bold;
     width: 100%;

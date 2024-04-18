@@ -1,17 +1,3 @@
-// add event listener to the nav icons
-document.querySelector('#home_icon').addEventListener('click', () => {
-window.location.href = 'Home.html';
-});
-
-document.querySelector('#music_icon').addEventListener('click', () => {
-window.location.href = 'PokeMusic.html';
-});
-
-document.querySelector('#favs_icon').addEventListener('click', () => {
-window.location.href = 'PokeFavs.html';
-});
-
-
 
 // add event listener to each type icon
 document.addEventListener('DOMContentLoaded', function() {
