@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get all the elements needed
     const albums = document.querySelectorAll('.player');
     const floatingPlayer = document.getElementById('floatingPlayer');
-    const floatingAudio = floatingPlayer.querySelector('.audioPlayer');
+    const floatingAudio = floatingPlayer.querySelector('.floatAudioPlayer');
     const playButton = floatingPlayer.querySelector('.play-icon');
     const pauseButton = floatingPlayer.querySelector('.pause-icon');
     const progressBar = floatingPlayer.querySelector('.progress');
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updatePlayPauseButtons(playButton, pauseButton) {
     // implement the function to update the play and pause buttons
-    if (floatingPlayer.querySelector('.audioPlayer').paused) {
+    if (floatingPlayer.querySelector('.floatAudioPlayer').paused) {
         playButton.style.display = 'inline';
         pauseButton.style.display = 'none';
     } else {

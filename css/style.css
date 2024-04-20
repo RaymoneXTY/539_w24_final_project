@@ -615,7 +615,8 @@ cursor: pointer;
     cursor: pointer;
     border: 0.3em solid black;
 }
-#musics .album-art-container:focus {
+#musics .album-art-container:focus {outline: 0;}
+#musics .album-art-container:focus img {
     outline: 0;
     border: 0.3em solid black;
 }
@@ -744,10 +745,7 @@ cursor: pointer;
     text-align: center;}
     .album-art {width: 100%;}
 
-#musics .album-art-container :hover {
-    cursor: pointer;
-    border: 0.3em solid black;
-}
+
 /* show the floating music player */
 .floating-player {display: grid;
     visibility: visible;
