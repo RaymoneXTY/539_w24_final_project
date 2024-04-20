@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playButton = floatingPlayer.querySelector('.play-icon');
     const pauseButton = floatingPlayer.querySelector('.pause-icon');
     const progressBar = floatingPlayer.querySelector('.progress');
-    const progressBarContainer = floatingPlayer.querySelector('.progress-bar-container');  // Make sure this selector matches your HTML
+    const progressBarContainer = floatingPlayer.querySelector('.progress-bar-container');
     const currentTimeDisplay = floatingPlayer.querySelector('.current-time');
     const totalTimeDisplay = floatingPlayer.querySelector('.total-time');
     let currentPlayingAlbum = null;
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     floatingAudio.play();
                     updatePlayPauseButtons(playButton, pauseButton);
                     updateFloatingPlayerInfo(player, floatingPlayer);
+                    currentPlayingAlbum = player;
                 }
             }
         }
@@ -113,9 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Revert the floating player info when the mouse leaves the album art
         artContainer.addEventListener('mouseleave', function() {
             if (window.innerWidth >= 1024 && currentPlayingAlbum) {
-                // Only revert if the mouse leaves the current playing album and no other album is hovered
                 setTimeout(() => {
-                    if (!document.querySelector('.player:hover')) {  // Checks if no player is currently being hovered
+                    if (!document.querySelector('.player:hover')) {
                         updateFloatingPlayerInfo(currentPlayingAlbum, floatingPlayer);
                     }
                 }, 100);  // A small delay to ensure it only reverts if truly no album is hovered
