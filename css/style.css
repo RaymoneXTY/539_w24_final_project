@@ -1,3 +1,4 @@
+/* predefine colors for the pokemon types */
 :root {
     --clr-black: #222831;
     --clr-shallow: #393E46;
@@ -20,12 +21,12 @@
 	--clr-rock: #C9BB8A;
 	--clr-ghost: #5F6DBC;
 	--clr-dragon: #0C69C8;
-	--clr-dark: #705746;
+    --clr-dark: #595761;
     --clr-steel: #5695A3;
-	/* --clr-steel: #B7B7CE; */
 	--clr-fairy: #D685AD;
 }
 /* Remove all animations and transitions for people that prefer not to see them */
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -44,6 +45,7 @@
 html {background: rgb(248,181,0);
     background: linear-gradient(180deg, var(--clr-electric) 0, #EEEEEE 600px, rgba(255,255,255,1) 80%);
     background-repeat: no-repeat;}
+
 /* style the navigation bar */
 .skip {position: absolute;
     left: -999em;
@@ -84,22 +86,29 @@ a span {
 
 a img {width: 50%;
 text-align: center;}
+
+/* reset the default focus outline */
+*:focus {
+    outline: solid 0.2em #222831;
+}
+
 .navigation a:link {color: #FFD369;
     text-decoration: none;
     transition: transform 0.3s ease; }
 
 .navigation a:hover img.nav_icon {
-    transform: scale(1.2); /* Scale up the image by 1.1 */
+    transform: scale(1.2);
 }
 
 .navigation a:hover span {
-    background-color: white; /* Change background of span to white */
-    color: #222831; /* Change text color of span to black */
+    background-color: white;
+    color: #222831;
 }
 
+
 .navigation .current span {
-    background-color: white; /* Change background of span to white */
-    color: #222831; /* Change text color of span to black */
+    background-color: white; 
+    color: #222831;
     font-weight: bold;
 }
 @media (min-width: 768px) {
@@ -139,23 +148,23 @@ h2 {
       margin-bottom: 0.4em;
     }
 
-
+/* place the pokemon cards in a flexbox */
 #pokemon_cards {
     display: flex;
-    flex-direction: column; /* Ensures that the items are laid out in a row */
-    overflow-x: auto; /* Enables horizontal scrolling if the content overflows */
-    align-items: center; /* Align items to the start of the cross axis */
-    white-space: nowrap; /* Prevents wrapping of the items */
-    padding-bottom: 2% 0; /* Gives some space for the scrollbar */
+    flex-direction: column;
+    overflow-x: auto;
+    align-items: center;
+    white-space: nowrap;
+    padding-bottom: 2% 0;
 }
 
 .card {
-    flex: 0 0 auto; /* Prevents the cards from stretching and sets the basis to auto */
+    flex: 0 0 auto;
     text-align: center;
-    width: 70%; /* Adjust the width as necessary */
+    width: 70%;
     margin: 5%;
     border-radius: 10px;
-    /* Rest of the styles */
+
 }
 
 #click_pokemon {font-size: 100%;
@@ -165,6 +174,8 @@ h2 {
     text-align: center;
 color: #222831;}
 
+
+/* style the pokemon cards' backgrounds */
 #pikachu {
         background: radial-gradient(circle at center bottom, var(--clr-electric) 50%, transparent 50%), white;
     }
@@ -230,7 +241,7 @@ color: #222831;}
     z-index: 1;
   }
 
-
+/* style the pokemon cards' borders and shadows */
 #pikachu {box-shadow: 0.2em 0.3em rgba(254,211,48,0.6);}
 #sceptile {box-shadow: 0.2em 0.3em rgba(122,199,76,0.6);}
 #infernape {box-shadow: 0.2em 0.3em rgba(238,129,48,0.6);}
@@ -245,7 +256,7 @@ color: #222831;}
 #lucario {box-shadow: 0.2em 0.3em rgba(194,46,40,0.6);}
 #weavile {box-shadow: 0.2em 0.3em rgba(150,217,214,0.6);}
 #jirachi {box-shadow: 0.2em 0.3em rgba(86,149,163,0.6);}
-#zoroark {box-shadow: 0.2em 0.3em rgba(112,87,70,0.6);}
+#zoroark {box-shadow: 0.2em 0.3em rgba(89,87,97,0.6);}
 #salamence {box-shadow: 0.2em 0.3em rgba(12,105,200,0.6);}
 #gardevoir {box-shadow: 0.2em 0.3em rgba(249,85,135,0.6);}
 #mimikyu {box-shadow: 0.2em 0.3em rgba(214,133,173,0.6);}
@@ -290,14 +301,35 @@ color: #222831;}
 #gardevoir:hover {border: 0.25em solid var(--clr-psychic);}
 #mimikyu:hover {border: 0.25em solid var(--clr-fairy);}
 
+#pikachu:focus {border: 0.25em solid var(--clr-electric);}
+#sceptile:focus {border: 0.25em solid var(--clr-grass);}
+#infernape:focus {border: 0.25em solid var(--clr-fire);}
+#greninja:focus {border: 0.25em solid var(--clr-water);}
+#snorlax:focus {border: 0.25em solid var(--clr-normal);}
+#staraptor:focus {border: 0.25em solid var(--clr-flying);}
+#lycanroc:focus {border: 0.25em solid var(--clr-rock);}
+#gliscor:focus {border: 0.25em solid var(--clr-ground);}
+#gengar:focus {border: 0.25em solid var(--clr-ghost);}
+#toxtricity:focus {border: 0.25em solid var(--clr-poison);}
+#heracross:focus {border: 0.25em solid var(--clr-bug);}
+#lucario:focus {border: 0.25em solid var(--clr-fighting);}
+#weavile:focus {border: 0.25em solid var(--clr-ice);}
+#jirachi:focus {border: 0.25em solid var(--clr-steel);}
+#zoroark:focus {border: 0.25em solid var(--clr-dark);}
+#salamence:focus {border: 0.25em solid var(--clr-dragon);}
+#gardevoir:focus {border: 0.25em solid var(--clr-psychic);}
+#mimikyu:focus {border: 0.25em solid var(--clr-fairy);}
 
 
 #pikachu:hover, #sceptile:hover, #infernape:hover, #greninja:hover, #snorlax:hover, #staraptor:hover, #lycanroc:hover, #gliscor:hover, #gengar:hover, #toxtricity:hover, #heracross:hover, #lucario:hover, #weavile:hover, #jirachi:hover, #zoroark:hover, #salamence:hover, #gardevoir:hover, #mimikyu:hover{
     cursor: pointer;
 }
+.card:focus{outline:0;}
 .card:hover {transform: scale(1.1);
     transition: transform 0.2s ease-in-out;}
 
+.card:focus {transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;}
 
 .card_type_icon {width: 20%;
 border-radius: 100%;
@@ -327,7 +359,7 @@ h4 {
       text-align: center;
     }
 
-
+/* style the type titles' colors */
 #type_electric {color: var(--clr-electric);}
 #type_water {color: var(--clr-water);}
 #type_fire {color: var(--clr-fire);}
@@ -386,6 +418,7 @@ h4 {
     .pk_title .psychic_icon {width: 60%;
         padding: 5% auto;
     margin-top: 15%;}
+    /* change the layout of the last two pokemon cards to grid to let them span the row */
     #gardevoir {display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
@@ -552,6 +585,7 @@ cursor: pointer;
 
 /* style the music page */
 
+/* place all the music cards in a flexbox */
 #musics {display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -576,6 +610,14 @@ cursor: pointer;
 
 .album-art-container {
     margin: 0;
+}
+#musics .album-art-container :hover {
+    cursor: pointer;
+    border: 0.3em solid black;
+}
+#musics .album-art-container:focus {
+    outline: 0;
+    border: 0.3em solid black;
 }
 .controls-container {
     display: flex;
@@ -635,7 +677,7 @@ cursor: pointer;
 }
 
 .progress {
-    width: 0%; /* This will be updated with JavaScript */
+    width: 0%;
     height: 100%;
     background-color: var(--clr-yellow);
     position: absolute;
@@ -654,6 +696,8 @@ cursor: pointer;
 .controls-container .icon:hover {
     opacity: 0.7;
 }
+
+/* hide the floating player by default */
 .floating-player {
     display: none;
     margin: auto;
@@ -678,6 +722,7 @@ cursor: pointer;
 }
 
 @media (min-width: 1024px) {
+    /* change the layout to one row in desktop view */
     #musics {
         max-width: 100%;
         display:inline-block;
@@ -703,7 +748,7 @@ cursor: pointer;
     cursor: pointer;
     border: 0.3em solid black;
 }
-
+/* show the floating music player */
 .floating-player {display: grid;
     visibility: visible;
     opacity: 1;}
